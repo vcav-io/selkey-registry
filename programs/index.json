@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "kind": "program",
+  "artefacts": {
+    "sha256:bc4fdec512a08e5fd46f57a5f07d3ea6b2e0cf68f9e8f7cd4ba3d16d10bc36f2": {
+      "id": "mediation_system_v2",
+      "version": "2.0.0",
+      "description": "Bounded signal classifier for dispute triage — abstract alignment axes, no paraphrasing",
+      "status": "active",
+      "published_at": "2026-03-07",
+      "compatibility": {}
+    },
+    "sha256:18b1b459ceb12fc03cb005314f6b4e168c113ead7255b4b65329fb8a6c60f874": {
+      "id": "compatibility_system_v2",
+      "version": "2.0.0",
+      "description": "Compatibility signal classifier with full enum documentation and privacy rules",
+      "status": "active",
+      "published_at": "2026-03-07",
+      "compatibility": {}
+    }
+  },
+  "aliases": {
+    "mediation_system_v2": "sha256:bc4fdec512a08e5fd46f57a5f07d3ea6b2e0cf68f9e8f7cd4ba3d16d10bc36f2",
+    "compatibility_system_v2": "sha256:18b1b459ceb12fc03cb005314f6b4e168c113ead7255b4b65329fb8a6c60f874"
+  },
+  "channels": {
+    "mediation_system@latest": "sha256:bc4fdec512a08e5fd46f57a5f07d3ea6b2e0cf68f9e8f7cd4ba3d16d10bc36f2",
+    "compatibility_system@latest": "sha256:18b1b459ceb12fc03cb005314f6b4e168c113ead7255b4b65329fb8a6c60f874"
+  }
+}

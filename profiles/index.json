@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "kind": "profile",
+  "artefacts": {
+    "sha256:0892ed75593cec785f13b8c331c0dd9cd0d69622ffbf0974dcb3493d94247103": {
+      "id": "api-claude-sonnet-v1",
+      "version": "1.0.0",
+      "description": "Claude Sonnet via Anthropic API — unconstrained reasoning, structured output",
+      "status": "active",
+      "published_at": "2026-03-07",
+      "compatibility": {}
+    }
+  },
+  "aliases": {
+    "api-claude-sonnet-v1": "sha256:0892ed75593cec785f13b8c331c0dd9cd0d69622ffbf0974dcb3493d94247103"
+  },
+  "channels": {
+    "api-claude-sonnet@latest": "sha256:0892ed75593cec785f13b8c331c0dd9cd0d69622ffbf0974dcb3493d94247103"
+  }
+}

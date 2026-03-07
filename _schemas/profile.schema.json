@@ -1,0 +1,15 @@
+{
+  "title": "ModelProfile",
+  "description": "Type-validation schema for model profiles, derived from the Rust ModelProfile struct",
+  "type": "object",
+  "required": ["profile_version", "profile_id", "provider", "model_family", "reasoning_mode", "structured_output"],
+  "additionalProperties": false,
+  "properties": {
+    "profile_version": { "type": "string" },
+    "profile_id": { "type": "string" },
+    "provider": { "type": "string" },
+    "model_family": { "type": "string" },
+    "reasoning_mode": { "type": "string" },
+    "structured_output": { "type": "boolean" }
+  }
+}

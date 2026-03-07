@@ -1,0 +1,10 @@
+{
+  "registry_version": "1.0.0",
+  "kinds": ["schema", "policy", "profile", "program"],
+  "indexes": {
+    "schema": "schemas/index.json",
+    "policy": "policies/index.json",
+    "profile": "profiles/index.json",
+    "program": "programs/index.json"
+  }
+}

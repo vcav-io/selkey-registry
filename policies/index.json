@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "kind": "policy",
+  "artefacts": {
+    "sha256:b977379e7787cd2165e2dcf9d790ed339cbc90df481f343c3bd0fec4ec5fe459": {
+      "id": "compatibility_safe_v1",
+      "version": "1.0.0",
+      "description": "SAFE enforcement policy for compatibility sessions — blocks digits and currency symbols, advisory entropy budget",
+      "status": "active",
+      "published_at": "2026-03-07",
+      "compatibility": {
+        "safety_class": "SAFE"
+      }
+    }
+  },
+  "aliases": {
+    "compatibility_safe_v1": "sha256:b977379e7787cd2165e2dcf9d790ed339cbc90df481f343c3bd0fec4ec5fe459"
+  },
+  "channels": {
+    "compatibility_safe@latest": "sha256:b977379e7787cd2165e2dcf9d790ed339cbc90df481f343c3bd0fec4ec5fe459"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "title": "PromptProgram",
+  "description": "Type-validation schema for prompt programs, derived from the Rust PromptProgram struct",
+  "type": "object",
+  "required": ["version", "system_instruction", "input_format"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "string" },
+    "system_instruction": { "type": "string" },
+    "input_format": {
+      "type": "string",
+      "enum": ["structured", "narrative"]
+    }
+  }
+}
