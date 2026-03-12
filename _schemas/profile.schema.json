@@ -1,12 +1,15 @@
 {
   "title": "ModelProfile",
-  "description": "Type-validation schema for model profiles, derived from the Rust ModelProfile struct",
+  "description": "Type-validation schema for model profiles, derived from the Rust ModelProfile struct. The payload is content-addressed by digest; profile_id is human-readable metadata, not the authoritative trust anchor.",
   "type": "object",
   "required": ["profile_version", "profile_id", "provider", "model_family", "reasoning_mode", "structured_output"],
   "additionalProperties": false,
   "properties": {
     "profile_version": { "type": "string" },
-    "profile_id": { "type": "string" },
+    "profile_id": {
+      "type": "string",
+      "description": "Human-readable profile identifier used for aliases/UI. The profile digest remains authoritative."
+    },
     "provider": { "type": "string" },
     "model_family": { "type": "string" },
     "reasoning_mode": { "type": "string" },

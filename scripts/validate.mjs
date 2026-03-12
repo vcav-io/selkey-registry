@@ -106,6 +106,14 @@ for (const kind of registryJson.kinds) {
         pass(`${entry.id}: type validation passed`);
       }
     }
+
+    if (kind === "profile") {
+      if (parsed.profile_id !== entry.id) {
+        fail(
+          `${entry.id}: profile payload profile_id "${parsed.profile_id}" must match index entry id`
+        );
+      }
+    }
   }
 
   // 3a. Check aliases resolve to existing entries
@@ -113,6 +121,14 @@ for (const kind of registryJson.kinds) {
     for (const [alias, target] of Object.entries(index.aliases)) {
       if (!indexDigests.has(target)) {
         fail(`alias "${alias}" points to unknown digest ${target}`);
+      }
+      if (kind === "profile") {
+        const entry = index.artefacts[target];
+        if (entry && alias !== entry.id) {
+          fail(
+            `profile alias "${alias}" must match index entry id "${entry.id}" for ${target}`
+          );
+        }
       }
     }
   }

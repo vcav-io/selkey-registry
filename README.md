@@ -38,6 +38,20 @@ agentvault-registry/
 - **Qualified form**: `sha256:<hex>` (in indexes, contracts, allowlists)
 - **Filenames**: `sha256-<hex>.json` (hyphen for filesystem safety)
 
+## Profile identity rules
+
+Profiles follow the same content-addressing rule as every other artefact kind:
+
+- the profile digest is the authoritative identifier for interoperable references
+- `profile_id` is human-readable metadata inside the payload, not the trust anchor
+- profile aliases and channels are convenience pointers to a digest, not an alternative authority
+
+That means:
+
+- contracts and receipts should treat `model_profile_hash` as authoritative
+- policy allowlists should prefer hash entries (`sha256:<hex>` or raw hex where a local format requires it)
+- semantic IDs remain useful for readability, UI, and migration, but should not be treated as the source of truth when a hash is present
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
