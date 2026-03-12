@@ -40,6 +40,17 @@
 - **Channels are mutable.** `name@latest` pointers may be retargeted. Do not rely on channels for reproducible contract construction — use aliases or raw digests.
 - **Status values**: `"active"`, `"experimental"`, `"deprecated"`.
 
+## Profile-specific guidance
+
+Profiles are content-addressed artefacts. In this registry, that means:
+
+- the digest is authoritative
+- `profile_id` is human-readable metadata carried inside the payload
+- the profile index alias should match the payload's `profile_id`
+- policy and contract references should prefer the profile digest when a machine-verifiable reference is needed
+
+Treat semantic IDs as readability and migration aids, not as the long-term trust anchor.
+
 ## Compatibility metadata
 
 Schemas and policies should declare a `safety_class` in their `compatibility` object:
