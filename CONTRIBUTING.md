@@ -1,4 +1,4 @@
-# Contributing to the AgentVault Registry
+# Contributing to the Selkey Registry
 
 ## Submitting an artefact
 

@@ -1,5 +1,5 @@
 {
-  "title": "AgentVault Output Schema",
+  "title": "Selkey Output Schema",
   "description": "Meta-schema for output schemas — must be a valid JSON Schema with object type and additionalProperties: false",
   "type": "object",
   "required": ["type", "required", "properties", "additionalProperties"],

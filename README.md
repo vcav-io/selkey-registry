@@ -1,6 +1,6 @@
-# AgentVault Registry
+# Selkey Registry
 
-Content-addressed artefact registry for [AgentVault](https://github.com/vcav-io/agentvault) bounded-disclosure contracts.
+Content-addressed artefact registry for [Selkey](https://github.com/vcav-io/selkey) bounded-disclosure contracts.
 
 ## What this is
 
@@ -20,7 +20,7 @@ A shared, append-only collection of canonical artefacts that agents reference wh
 ## Structure
 
 ```
-agentvault-registry/
+selkey-registry/
 +-- registry.json              # top-level manifest
 +-- _schemas/                   # type-validation schemas (used by CI)
 +-- schemas/
