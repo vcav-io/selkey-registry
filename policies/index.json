@@ -5,18 +5,29 @@
     "sha256:b977379e7787cd2165e2dcf9d790ed339cbc90df481f343c3bd0fec4ec5fe459": {
       "id": "compatibility_safe_v1",
       "version": "1.0.0",
-      "description": "SAFE enforcement policy for compatibility sessions — blocks digits and currency symbols, advisory entropy budget",
-      "status": "active",
+      "description": "SAFE enforcement policy for compatibility sessions — blocks digits and currency symbols, advisory entropy budget. Superseded by compatibility_safe_v2",
+      "status": "deprecated",
       "published_at": "2026-03-07",
+      "compatibility": {
+        "safety_class": "SAFE"
+      }
+    },
+    "sha256:d4000eaa92b2cdf73d7d1b6a5cc6d4426421bf757984edf3b073eeb1bfd5041b": {
+      "id": "compatibility_safe_v2",
+      "version": "2.0.0",
+      "description": "SAFE enforcement policy for compatibility sessions — blocks digits and currency symbols, advisory entropy budget; allows Anthropic, OpenAI and Gemini model profiles",
+      "status": "active",
+      "published_at": "2026-10-23",
       "compatibility": {
         "safety_class": "SAFE"
       }
     }
   },
   "aliases": {
-    "compatibility_safe_v1": "sha256:b977379e7787cd2165e2dcf9d790ed339cbc90df481f343c3bd0fec4ec5fe459"
+    "compatibility_safe_v1": "sha256:b977379e7787cd2165e2dcf9d790ed339cbc90df481f343c3bd0fec4ec5fe459",
+    "compatibility_safe_v2": "sha256:d4000eaa92b2cdf73d7d1b6a5cc6d4426421bf757984edf3b073eeb1bfd5041b"
   },
   "channels": {
-    "compatibility_safe@latest": "sha256:b977379e7787cd2165e2dcf9d790ed339cbc90df481f343c3bd0fec4ec5fe459"
+    "compatibility_safe@latest": "sha256:d4000eaa92b2cdf73d7d1b6a5cc6d4426421bf757984edf3b073eeb1bfd5041b"
   }
 }
