@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "kind": "profile",
   "artefacts": {
-    "sha256:0892ed75593cec785f13b8c331c0dd9cd0d69622ffbf0974dcb3493d94247103": {
+    "sha256:5f01005dcfe4c95ee52b5f47958b4943134cc97da487b222dd4f936d474f70f8": {
       "id": "api-claude-sonnet-v1",
       "version": "1.0.0",
       "description": "Claude Sonnet via Anthropic API — unconstrained reasoning, structured output",
@@ -12,9 +12,9 @@
     }
   },
   "aliases": {
-    "api-claude-sonnet-v1": "sha256:0892ed75593cec785f13b8c331c0dd9cd0d69622ffbf0974dcb3493d94247103"
+    "api-claude-sonnet-v1": "sha256:5f01005dcfe4c95ee52b5f47958b4943134cc97da487b222dd4f936d474f70f8"
   },
   "channels": {
-    "api-claude-sonnet@latest": "sha256:0892ed75593cec785f13b8c331c0dd9cd0d69622ffbf0974dcb3493d94247103"
+    "api-claude-sonnet@latest": "sha256:5f01005dcfe4c95ee52b5f47958b4943134cc97da487b222dd4f936d474f70f8"
   }
 }
