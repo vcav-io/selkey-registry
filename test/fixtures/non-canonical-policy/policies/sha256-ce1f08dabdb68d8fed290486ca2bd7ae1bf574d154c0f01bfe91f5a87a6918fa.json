@@ -1,0 +1,20 @@
+{
+  "policy_version": "1",
+  "policy_id": "fixture_policy_v1",
+  "policy_scope": "RELAY_GLOBAL",
+  "model_profile_allowlist": [],
+  "provider_allowlist": [],
+  "rules": [
+    {
+      "rule_id": "no_digits",
+      "type": "unicode_category_reject",
+      "value": "Nd",
+      "scope": {
+        "kind": "all_string_values",
+        "skip_keys": []
+      },
+      "classification": "GATE"
+    }
+  ],
+  "entropy_constraints": null
+}

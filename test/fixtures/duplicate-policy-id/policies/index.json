@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "kind": "policy",
+  "artefacts": {
+    "sha256:e462f911b5dd3e74d5ae6e80fefdabbf0ff3144b7775bc87f2d38d0a250e1c9e": {
+      "id": "fixture_policy_v1",
+      "version": "1.0.0",
+      "description": "Fixture policy (GATE)",
+      "status": "active",
+      "published_at": "2026-10-23",
+      "compatibility": {
+        "safety_class": "SAFE"
+      }
+    },
+    "sha256:3d108a2480c1b994d8dcad65c4affb430af7ce61934d637c2fb5a2ae8017ffa7": {
+      "id": "fixture_policy_v1",
+      "version": "1.0.0",
+      "description": "Fixture policy (ADVISORY)",
+      "status": "active",
+      "published_at": "2026-10-23",
+      "compatibility": {
+        "safety_class": "SAFE"
+      }
+    }
+  },
+  "aliases": {},
+  "channels": {}
+}
