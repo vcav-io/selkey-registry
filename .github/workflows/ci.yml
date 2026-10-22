@@ -21,3 +21,6 @@ jobs:
 
       - name: Validate registry
         run: node scripts/validate.mjs
+
+      - name: Validator self-check
+        run: node test/self-check.mjs

@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "validate": "node scripts/validate.mjs"
+    "validate": "node scripts/validate.mjs",
+    "test": "node test/self-check.mjs"
   },
   "devDependencies": {
     "ajv": "^8.17.1"

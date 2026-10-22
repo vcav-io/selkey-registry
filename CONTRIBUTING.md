@@ -2,7 +2,7 @@
 
 ## Submitting an artefact
 
-1. **Create the payload file** — pure JSON matching the type-validation schema in `_schemas/<kind>.schema.json`. No metadata envelope; the file contains exactly the artefact payload.
+1. **Create the payload file** — pure JSON matching the type-validation schema in `_schemas/<kind>.schema.json`. No metadata envelope; the file contains exactly the artefact payload. Policy files should be canonical: write every field explicitly, using `null` for absent optional values. Keys must be unique and strings must be well-formed Unicode.
 
 2. **Compute the digest**:
    - Parse the JSON
@@ -36,6 +36,7 @@
 ## Rules
 
 - **Aliases are immutable.** Once created, an alias always points to the same digest. New versions get new aliases.
+- **Each version has its own id.** For policies and profiles, the payload's `policy_id` / `profile_id` must equal the index entry id and alias, and no two artefacts of a kind may share an id. A changed payload is a new version: give it a new id (e.g. `_v2`).
 - **Artefacts are append-only.** Entries are never removed. Set `status` to `"deprecated"` to signal an artefact should not be used in new contracts.
 - **Channels are mutable.** `name@latest` pointers may be retargeted. Do not rely on channels for reproducible contract construction — use aliases or raw digests.
 - **Status values**: `"active"`, `"experimental"`, `"deprecated"`.

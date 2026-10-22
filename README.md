@@ -61,6 +61,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 ```bash
 npm ci
 npm run validate
+npm test
 ```
 
-CI runs three checks per artefact: digest verification, type validation against `_schemas/`, and index consistency (aliases, channels, orphan detection).
+CI runs three checks per artefact: digest verification, type validation against `_schemas/`, and index consistency (aliases, channels, orphan detection, payload ids matching index ids). Payload files are parsed strictly: duplicate keys, lone surrogates and malformed UTF-8 are rejected, as RFC 8785 requires I-JSON input. `npm test` runs a self-check of the validator against fixtures.
