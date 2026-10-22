@@ -37,9 +37,10 @@ function readStrictJson(path) {
 
 /**
  * Validate the registry rooted at `root`. Returns the number of errors.
- * `log` receives { ok: boolean, msg: string } records.
+ * `log` receives { ok: boolean, msg: string } records. Type-validation
+ * schemas are read from `schemaRoot`/_schemas (defaults to `root`).
  */
-export function validateRegistry(root, log = defaultLog) {
+export function validateRegistry(root, log = defaultLog, schemaRoot = root) {
   let errors = 0;
   const fail = (msg) => {
     log({ ok: false, msg });
@@ -68,7 +69,7 @@ export function validateRegistry(root, log = defaultLog) {
     }
 
     // Load type-validation schema
-    const schemaPath = join(root, "_schemas", `${kind}.schema.json`);
+    const schemaPath = join(schemaRoot, "_schemas", `${kind}.schema.json`);
     let validate = null;
     if (existsSync(schemaPath)) {
       validate = ajv.compile(readStrictJson(schemaPath));

@@ -1,8 +1,17 @@
 {
   "title": "RelayEnforcementPolicy",
-  "description": "Type-validation schema for enforcement policies, derived from the Rust RelayEnforcementPolicy struct",
+  "description": "Type-validation schema for enforcement policies, derived from the Rust RelayEnforcementPolicy struct. Policy files must be canonical: every field is required, with null for absent optional values",
   "type": "object",
-  "required": ["policy_version", "policy_id", "policy_scope", "rules"],
+  "required": [
+    "policy_version",
+    "policy_id",
+    "policy_scope",
+    "model_profile_allowlist",
+    "provider_allowlist",
+    "max_output_tokens",
+    "rules",
+    "entropy_constraints"
+  ],
   "additionalProperties": false,
   "properties": {
     "policy_version": { "type": "string" },
@@ -54,7 +63,7 @@
     },
     "RuleScope": {
       "type": "object",
-      "required": ["kind"],
+      "required": ["kind", "skip_keys"],
       "additionalProperties": false,
       "properties": {
         "kind": {
@@ -70,7 +79,7 @@
     },
     "EntropyConstraints": {
       "type": "object",
-      "required": ["budget_bits", "classification"],
+      "required": ["budget_bits", "classification", "review_trigger_pct"],
       "additionalProperties": false,
       "properties": {
         "budget_bits": { "type": "integer", "minimum": 0 },

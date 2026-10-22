@@ -1,0 +1,9 @@
+{
+  "registry_version": "1.0.0",
+  "kinds": [
+    "policy"
+  ],
+  "indexes": {
+    "policy": "policies/index.json"
+  }
+}

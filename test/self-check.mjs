@@ -82,18 +82,57 @@ check("malformed UTF-8 is rejected", () => {
   expectThrows(() => decodeUtf8(new Uint8Array([0x7b, 0xed, 0xa0, 0x80, 0x7d])), /./);
 });
 
+check("leading byte order mark is rejected", () => {
+  const bytes = new Uint8Array([0xef, 0xbb, 0xbf, 0x7b, 0x7d]);
+  expectThrows(() => parseStrictJson(decodeUtf8(bytes)), /not valid JSON|Unexpected/);
+});
+
 console.log("\n=== registry validation ===");
 
-check("policies sharing a policy_id are rejected", () => {
-  const root = fileURLToPath(new URL("./fixtures/duplicate-policy-id", import.meta.url));
+const REPO_ROOT = fileURLToPath(new URL("..", import.meta.url));
+
+// Each fixture registry is valid except for one defect, so validation must
+// report exactly one error, matching `pattern`.
+function expectSingleFailure(fixture, pattern) {
+  const root = fileURLToPath(new URL(`./fixtures/${fixture}`, import.meta.url));
   const messages = [];
-  const errors = validateRegistry(root, (rec) => {
-    if (rec.ok === false) messages.push(rec.msg);
-  });
+  const errors = validateRegistry(
+    root,
+    (rec) => {
+      if (rec.ok === false) messages.push(rec.msg);
+    },
+    REPO_ROOT
+  );
   expectEqual(errors, 1);
-  if (!/policy_id "fixture_policy_v1" is used by both/.test(messages[0])) {
+  if (!pattern.test(messages[0])) {
     throw new Error(`unexpected failure: ${messages[0]}`);
   }
+}
+
+check("policies sharing a policy_id are rejected", () => {
+  expectSingleFailure("duplicate-policy-id", /policy_id "fixture_policy_v1" is used by both/);
+});
+
+check("policy_id that differs from its index entry id is rejected", () => {
+  expectSingleFailure(
+    "policy-id-mismatch",
+    /policy payload policy_id "fixture_policy_v1" must match index entry id/
+  );
+});
+
+check("policy alias that differs from its index entry id is rejected", () => {
+  expectSingleFailure(
+    "alias-mismatch",
+    /policy alias "fixture_policy_latest" must match index entry id "fixture_policy_v1"/
+  );
+});
+
+check("artefact file with a byte order mark is rejected", () => {
+  expectSingleFailure("bom-prefixed-file", /invalid JSON/);
+});
+
+check("policy with an omitted optional field is rejected", () => {
+  expectSingleFailure("non-canonical-policy", /required property 'max_output_tokens'/);
 });
 
 console.log(`\n${failures === 0 ? "Self-check passed." : `${failures} self-check failure(s).`}`);

@@ -7,9 +7,13 @@
  * checked explicitly here.
  */
 
-/** Decode bytes as UTF-8, rejecting malformed sequences. */
+/**
+ * Decode bytes as UTF-8, rejecting malformed sequences. A leading byte order
+ * mark is kept (ignoreBOM) so that JSON parsing rejects it, as RFC 8259 and
+ * serde_json do.
+ */
 export function decodeUtf8(bytes) {
-  return new TextDecoder("utf-8", { fatal: true }).decode(bytes);
+  return new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(bytes);
 }
 
 function checkString(s, where) {

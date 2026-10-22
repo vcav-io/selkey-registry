@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "kind": "policy",
+  "artefacts": {
+    "sha256:ce1f08dabdb68d8fed290486ca2bd7ae1bf574d154c0f01bfe91f5a87a6918fa": {
+      "id": "fixture_policy_v1",
+      "version": "1.0.0",
+      "description": "Fixture policy",
+      "status": "active",
+      "published_at": "2026-10-23",
+      "compatibility": {
+        "safety_class": "SAFE"
+      }
+    }
+  },
+  "aliases": {
+    "fixture_policy_v1": "sha256:ce1f08dabdb68d8fed290486ca2bd7ae1bf574d154c0f01bfe91f5a87a6918fa"
+  },
+  "channels": {}
+}
